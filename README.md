@@ -1,2 +1,1 @@
-# Python
-Portifólio Desenvolvedor Python
+# Portifólio Desenvolvedor Python
