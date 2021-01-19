@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset="uf-8">
+    <title>IGTIFlix</title>
+    <link href="{% static 'css/reset.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/menu.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/crud.css' %}" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+{% include "../menu.html" %}
+<main>
+    <div class="conteiner-center">
+        <span>
+            {% if serie_records %}
+        <table>
+            <thead>
+            <tr>
+                <th>Série</th>
+                <th>Clique para alterar</th>
+                <th>Clique para excluir</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for serie in serie_records %}
+            <tr>
+                <td>{{serie.nome}}</td>
+                <td><button class="list-button editar-button" onclick="updateItem({{serie.id}})">Alterar</button></td>
+                <td><button class="list-button apagar-button" onclick="deleteItem({{serie.id}})">Excluir</button></td>
+
+
+            </tr>
+           {% endfor %}
+            </tbody>
+        </table>
+            {% else %}
+               <p>Nenhum dado cadastrado</p>
+            {% endif %}
+        </span>
+    </div>
+
+    <div class="conteiner-center">
+        <form onsubmit="/serie" id="form-serie" method="post">
+
+            {{form}}
+            {% csrf_token %}
+
+            <input type="submit" id="submit-button" value="Enviar" class="enviar-button">
+
+
+        </form>
+    </div>
+
+
+</main>
+
+<script>
+    function deleteItem(id) {
+        const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        const request = new Request(
+        "/serie/delete/"+id,
+        {headers: {'X-CSRFToken': csrftoken}}
+        );
+        fetch(request, {
+            method: 'DELETE',
+            mode: 'same-origin'
+        }).then(function(response) {
+            location.replace("/serie")
+        });
+    }
+
+    function updateItem(id) {
+        location.replace("/serie/update/"+id)
+    }
+</script>
+
+</body>
+</html>
