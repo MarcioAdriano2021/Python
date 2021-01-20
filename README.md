@@ -30,18 +30,26 @@ Exercitar os seguintes conceitos trabalhados:
 ✓ Programação concorrente.
 ✓ Programação reativa.
 
-### Web:
+### Coleta de Dados:
+Exercitar os seguintes conceitos trabalhados no Módulo:
+✓ Coletar dados de API e armazenar em um banco de dados relacional (MySQL).
+✓ Coletar e tratar dados de arquivos.
+✓ Criar e manipular banco de dados não relacional (MongoDB).
+
+### Web
 Exercitar os seguintes conceitos trabalhados:
-✓ HTML
-✓ CSS
-✓ Flex Box
-✓ Criação de um projeto DJango
-✓ Criação de APIs Rest utilizando o Flask
-✓ Criação de um projeto completo com o Django
-✓ Conceitos de Rest API
+✓ HTML.
+✓ CSS.
+✓ Flex Box.
+✓ Criação de um projeto DJango.
+✓ Criação de APIs Rest utilizando o Flask.
+✓ Criação de um projeto completo com o Django.
+✓ Conceitos de Rest API.
+**Observação**: Foi constuída uma API em Jango e outra em Flask (Rest) para cadastrar e consultar Filmes e séries e gêneros 
 
 ### Desafio Final:
 Exercitar os seguintes conceitos trabalhados no Módulo:
 ✓ Scikit-Learning.
 ✓ Pandas/Numpy.
 ✓ Flask.
+**Observação**: para a solução do desafio, foi constuído e treinado um modelo de aprendizado de máquina que consiga prever se um determinado indivíduo desenvolverá ou não diabetes. Foi construída uma interface, utilizando o flask, que possibilita ao usuário introduzir os dados necessários para que o modelo possa indicar se as características fornecidas sugerem ou não o desenvolvimento de um quadro de diabetes.
